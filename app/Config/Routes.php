@@ -35,9 +35,14 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'ContactController::index');
+$routes->get('/sample_page', 'ContactController::sample_page');
 
-$routes->get('/sip', 'Home::sample_page');
+
+$routes->get('/contact/view_contacts', 'ContactController::view_contacts');
+
+$routes->post('/contact/create', 'ContactController::create');
+
 
 /*
  * --------------------------------------------------------------------
